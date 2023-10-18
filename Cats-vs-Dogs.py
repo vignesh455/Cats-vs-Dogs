@@ -98,15 +98,16 @@ model.evaluate(xtrain,ytrain)
 # In[36]:
 
 
-r = random.randint(0,len(xtrain))
-plt.imshow(xtrain[r])
+test = np.array(Test)/255
+r = random.randint(0,len(test))
+plt.imshow(test[r])
 plt.show()
-pre = model.predict(xtrain[r].reshape(1,100,100,3))
-print(pre)
+pre = model.predict(test[r].reshape(1,100,100,3))
+print("Probability :",pre[0][0])
 if pre>0.5:
-    print("Its a DOG")
+    print("Animal Type : DOG")
 elif pre<0.5:
-    print("Its a CAT")
+    print("Animal Type : CAT")
 
 
 # In[ ]:
