@@ -40,11 +40,12 @@ for i in types:
 
 for i in types:
     p = os.path.join(dir1,i)
+    c = types.index(i)
     for j in os.listdir(p):
         try:
             img = cv2.imread(os.path.join(p,j))
-            img = cv2.resize(img,(100,100))
-            Test.append(img)
+            img1 = cv2.resize(img,(100,100))
+            Test.append([img1,c])
         except Exception as e:
             pass
 
@@ -55,12 +56,20 @@ for i in types:
 xtrain = []
 ytrain = []
 
+xtest = []
+ytest = []
+
 for i,j in Train:
     xtrain.append(i)
     ytrain.append(j)
+for i,j in Test:
+    xtest.append(i)
+    ytest.append(j)
 
 xtrain = np.array(xtrain)/255
 ytrain = np.array(ytrain)
+xtest = np.array(xtest)/255
+ytest = np.array(ytest)
 
 
 # In[5]:
@@ -92,17 +101,16 @@ model.fit(xtrain,ytrain,epochs=10,batch_size=64)
 # In[8]:
 
 
-model.evaluate(xtrain,ytrain)
+model.evaluate(xtest,ytest)
 
 
 # In[36]:
 
 
-test = np.array(Test)/255
-r = random.randint(0,len(test))
-plt.imshow(test[r])
+r = random.randint(0,len(xtest))
+plt.imshow(xtest[r])
 plt.show()
-pre = model.predict(test[r].reshape(1,100,100,3))
+pre = model.predict(xtest[r].reshape(1,100,100,3))
 print("Probability :",pre[0][0])
 if pre>0.5:
     print("Animal Type : DOG")
