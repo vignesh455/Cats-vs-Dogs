@@ -2,8 +2,10 @@
 
 A deep learning model to classify between dogs and cats using Keras 
 
+The Model is Trained on 25000 images of cats & dogs which gave us the accuracy ~99%
+
 Libraries used : Tensorflow, Keras, Numpy, Matplotlib, Pandas, Random, openCV
 
 DataSets used : https://www.kaggle.com/competitions/dogs-vs-cats/data
 
-After Downloading the DataSet update "dir" & "dir1" Variables in the code with the test and train folder path in your pc
+Project Live On : https://huggingface.co/spaces/Vignesh455/CATvsDOG
