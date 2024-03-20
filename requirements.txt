@@ -1,4 +1,5 @@
 tensorflow
+opencv-python
 numpy
 PIL
 gradio
