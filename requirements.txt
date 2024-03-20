@@ -1,0 +1,4 @@
+tensorflow
+numpy
+PIL
+gradio
