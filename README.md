@@ -12,4 +12,4 @@ Deployed the project on the Hugging Face platform, providing a centralized and a
 
 DataSets used : https://www.kaggle.com/competitions/dogs-vs-cats/data
 
-Project Live On : https://huggingface.co/spaces/Vignesh455/CATvsDOG
+Project Live On : https://huggingface.co/spaces/Vignesh455/Cat-Dog
